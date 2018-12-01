@@ -11,83 +11,119 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   		<style type="text/css">
+
 		
-		#section1 {
-		background-image:url(images/paper.jpg);
-		padding-top:100px;	height:760px;
-		}
-		
-		#section2 {
-		padding-top:50px;	height:750px;
-		color: #fff; background-color: #800000;
-		}
-		
-		p.demo {
-		  text-align: center;
-		  color: black;
-		  font-size: 60px;
-		  margin-top: 0px;
-		}
-		p.titlee{
-		    font-family: Courier New Lucida Console, Monospace;
+		body{
 			text-align: center;
-			color: black			
+			background-image: url(images/web.png);			
+			font-family: sans-serif;
+			font-weight: 100;
 		}
-		p.powered{
-			font-size:2vw;
-			text-align: right;
-			color: black
+		
+		h1.countdownTitle{
+			  color: #b3ffee;
+			  font-weight: 100;
+			  font-size: 72px;
+			  margin: 40px 0px 20px;
 		}
-		.footer{
-			height: 50px;
-			margin-top: -50px;
-			padding-right:5em;
-			text-align: right;
-			color: black; background-color: #ffccff;
+		
+		table#top{
+			font-family: sans-serif;
+			color: #fff;
+			font-weight: 100;
+			text-align: center;
+			font-size: 72px;
+		}
+		
+		table#top, td#top {
+
+			padding: 15px;
+			background: #00BF96;
+		}
+		
+		table#bottom{
+			font-family: sans-serif;
+			color: #fff;
+			font-weight: 100;
+			text-align: center;
+			font-size: 30px;
+		}
+		
+		table#bottom, td#bottom {
+		    border-style:solid;
+			border-width:5px;  
+			border-color:#00ECB9;
+			padding: 5px;
+			background: #00BF96;
+		}
+		
+		p#days, p#hours, p#mins, p#secs{
+			padding: 30px;
+			border-radius: 3px;
+			background: #00816A;
 		}
 		</style>
 </head>
 
-<!-- -->
 <!-- ***** BODY ELEMENT ****** -->
 <body>
 <!-- ******* DIV 1: THE COUNTER-->
-<div id="section1" class="container-fluid">
-		<div class="row">		
+
+	<div class="row">		
 		<div class="col-sm-1"></div>
 		<div class="col-sm-10">
-			<p style="font-size:5vw" class="titlee">Countdown to launch: </p>
+			<h1 class="countdownTitle"><br><br>Countdown to launch: </h1>
 		</div>
 		<div class="col-sm-1"></div>
 	</div>	
+	
+	
 	<div class="row">
 		<div class="col-sm-1"></div>
 		<div class="col-sm-10">
-			<p style="font-size:8vw" id="demo" class="demo"></p>
+			<!--p style="font-size:8vw" id="demo" class="demo"></p-->
+			<div class="row">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-10">
+					<table style="width:100%" id = "top">
+						<col width="150">
+						<col width="150">
+						<col width="150">
+						<col width="150">						
+					  <tr>
+						<td id = "top"><p id="days" class="days"></p></td>
+						<td id = "top"><p id="hours" class="hours"></p></td>
+						<td id = "top"><p id="mins" class="mins"></p></td>
+						<td id = "top"><p id="secs" class="secs"></p></td>
+					  </tr>
+					</table>
+					
+					<table style="width:100%" id = "bottom">
+						<col width="150">
+						<col width="150">
+						<col width="150">
+						<col width="150">						
+					  <tr>
+						<td id = "bottom">days</td>
+						<td id = "bottom">hours</td>
+						<td id = "bottom">minutes</td>
+						<td id = "bottom">seconds</td>
+					  </tr>
+					</table>
+				</div>
+				<div class="col-sm-1"></div>
+			</div>
 		</div>		
 		<div class="col-sm-1"></div>
 	</div>
-	<div class="row">	
-	</div>
-	<br><br><br>
-		<div class="row">		
-		<div class="col-sm-1"></div>
-		<div class="col-sm-10">
-			<p class="powered"><br><br>powered by: <img src="images/gnlearn.png" alt = "gnlearn-logo"  
-			 width="192"><t></p>
-		</div>
-		<div class="col-sm-1"></div>
-		</div>	
-</div>
+	
 	
 	<!-- THE JS THAT WILL COUNT THE COUNTDOWN TIME -->
 	<script>
 		// Set the date we're counting down to
 		var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
-
 		// Update the count down every 1 second
 		var x = setInterval(function() {
-
 			// Get todays date and time
 			var now = new Date().getTime();
 			
@@ -101,8 +137,10 @@
 			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 			
 			// Output the result in an element with id="demo"
-			document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-			+ minutes + "m " + seconds + "s ";
+			document.getElementById("days").innerHTML = days;
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("mins").innerHTML = minutes;
+			document.getElementById("secs").innerHTML = seconds;
 			
 			// If the count down is over, write some text 
 			if (distance < 0) {
@@ -111,19 +149,5 @@
 			}
 		}, 1000);
 	</script>	
-		
-	<!-- ******* DIV 1: THE COUNTER-->
-	<div id="section2" class="container-fluid">
-	<div class="col-sm-1"></div>
-	<div class="col-sm-6">
-		<h1 style="font-size:5vw">Our Mission Statement</h1>
-		<p><font size="5">To enchance students learning experience </font></p></div>
-	<div class="col-sm-1"></div>	
-	</div>	
-	
-	<footer class="footer"> 
-			<p>Created by: Far Zainal &nbsp;&nbsp;&nbsp;&nbsp; copyright of: <img src="images/gnlearn.png" alt = "gnlearn-logo"  
-			 width="96"></p>
-	</footer>
 </body>
 </html>
