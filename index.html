@@ -28,39 +28,46 @@
 		}
 		
 		table#top{
+			table-layout: fixed;
 			font-family: sans-serif;
 			color: #fff;
 			font-weight: 100;
 			text-align: center;
-			font-size: 72px;
+			border-collapse: collapse;
 		}
 		
 		table#top, td#top {
-
 			padding: 15px;
+			font-size: 72px;
 			background: #00BF96;
+			border-style:solid;
+			border-width:5px;  
+			border-color:#00BF96;
 		}
 		
-		table#bottom{
-			font-family: sans-serif;
-			color: #fff;
-			font-weight: 100;
-			text-align: center;
-			font-size: 30px;
+		td#bottom {
+			padding: 15px;
+			background: #00BF96;
+			font-size = 30px;
 		}
 		
 		table#bottom, td#bottom {
-		    border-style:solid;
-			border-width:5px;  
-			border-color:#00ECB9;
 			padding: 5px;
 			background: #00BF96;
+			border-style:solid;
+			border-width:5px;  
+			border-color:#00ECB9;
+			
 		}
 		
 		p#days, p#hours, p#mins, p#secs{
 			padding: 30px;
 			border-radius: 3px;
 			background: #00816A;
+		}
+		
+		p#timeLabel{
+			font-size: 32px;			
 		}
 		</style>
 </head>
@@ -85,20 +92,22 @@
 			<div class="row">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10">
-					<table style="width:100%" id = "top">
-						<col width="150">
-						<col width="150">
-						<col width="150">
-						<col width="150">						
+					<table style="width:100%" id = "top">						
 					  <tr>
 						<td id = "top"><p id="days" class="days"></p></td>
 						<td id = "top"><p id="hours" class="hours"></p></td>
 						<td id = "top"><p id="mins" class="mins"></p></td>
 						<td id = "top"><p id="secs" class="secs"></p></td>
 					  </tr>
+					  <tr>
+						<td id = "bottom"><p id="timeLabel">days</p></td>
+						<td id = "bottom"><p id="timeLabel">hours</p></td>
+						<td id = "bottom"><p id="timeLabel">minutes</p></td>
+						<td id = "bottom"><p id="timeLabel">seconds</p></td>
+					  </tr>
 					</table>
 					
-					<table style="width:100%" id = "bottom">
+					<!--table style="width:100%" id = "bottom">
 						<col width="150">
 						<col width="150">
 						<col width="150">
@@ -109,14 +118,14 @@
 						<td id = "bottom">minutes</td>
 						<td id = "bottom">seconds</td>
 					  </tr>
-					</table>
+					</table-->
 				</div>
 				<div class="col-sm-1"></div>
 			</div>
 		</div>		
 		<div class="col-sm-1"></div>
 	</div>
-	
+
 	
 	<!-- THE JS THAT WILL COUNT THE COUNTDOWN TIME -->
 	<script>
